@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable
 fun LightPreview() {
