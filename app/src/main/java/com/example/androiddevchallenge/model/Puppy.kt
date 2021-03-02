@@ -5,7 +5,7 @@ import androidx.annotation.DrawableRes
 data class Puppy(
     var id: Int,
     val name: String,
-    val brithDate: String,
+    val birthDate: String,
     val sex: Sex,
     val breed: String,
     val location: String,

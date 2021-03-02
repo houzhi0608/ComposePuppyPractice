@@ -1,6 +1,7 @@
 package com.example.androiddevchallenge
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -17,7 +18,10 @@ object MainDestinations {
 }
 
 @Composable
-fun NavGraph(startDestination: String = MainDestinations.PUPPY_LIST) {
+fun NavGraph(
+    startDestination: String = MainDestinations.PUPPY_LIST,
+    darkTheme: MutableState<Boolean>
+) {
     val navController = rememberNavController()
     val actions = remember(navController) { MainActions(navController) }
     NavHost(
@@ -25,7 +29,7 @@ fun NavGraph(startDestination: String = MainDestinations.PUPPY_LIST) {
         startDestination = startDestination
     ) {
         composable(MainDestinations.PUPPY_LIST) {
-            PuppyScreen(actions.puppySelected)
+            PuppyScreen(actions.puppySelected, darkTheme)
         }
         composable(
             "${MainDestinations.PUPPY_DETAIL}/{$PUPPY_DETAIL_ID_KEY}",

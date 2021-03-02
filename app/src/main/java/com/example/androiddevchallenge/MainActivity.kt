@@ -19,6 +19,8 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.androiddevchallenge.ui.list.PuppyScreen
 import com.example.androiddevchallenge.ui.theme.MyTheme
@@ -27,8 +29,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyTheme {
-                NavGraph()
+            val darkTheme = remember { mutableStateOf(true) }
+            MyTheme(darkTheme = darkTheme.value) {
+                NavGraph(darkTheme = darkTheme)
             }
         }
     }
