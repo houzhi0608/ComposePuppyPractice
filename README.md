@@ -7,7 +7,7 @@
 
 ## :scroll: Description
 <!--- Describe your app in one or two sentences -->
-Puppy Home is puppy adoption app! All of the UI components are all implemented by Jetpack Compose.
+Puppy Home is a puppy adoption app! All of the UI components are all implemented by Jetpack Compose.
 
 ## :bulb: Motivation and Context
 <!--- Optionally point readers to interesting parts of your submission. -->
